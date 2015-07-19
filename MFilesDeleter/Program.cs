@@ -52,6 +52,7 @@ namespace MFilesDeleter
       {
         case ActionType.WriteDescription:
           WriteDescription(p);
+          WriteUsage();
           break;
 
         case ActionType.DestroyObjectsOfClasses:
@@ -79,6 +80,21 @@ namespace MFilesDeleter
       var writer = GetLogWriter();
       writer.WriteLine("MFilesImporter written by martin kramer <martin.kramer@lostindetails.com>");
       p.Options.WriteOptionDescriptions(writer);
+    }
+
+    private void WriteUsage()
+    {
+      var writer = GetLogWriter();
+      writer.WriteLine("usage examples:");
+      writer.WriteLine();
+      writer.WriteLine("MFilesDeleter -v \"Sample Vault\" -lo");
+      writer.WriteLine("\tLists all object types and the number of files");
+      writer.WriteLine();
+      writer.WriteLine("MFilesDeleter -v \"Sample Vault\" -lc");
+      writer.WriteLine("\tLists all classes and the number of files");
+      writer.WriteLine();
+      writer.WriteLine("MFilesDeleter -v \"Sample Vault\" --destroy-by-class \"Request for Proposal\"");
+      writer.WriteLine("\tDestroys all files that belong to the class 'Request for Proposal'");
     }
 
     private void DestroyObjectsByClass(ParametersModel p)
