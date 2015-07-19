@@ -1,0 +1,28 @@
+﻿MFilesDeleter is a commandline tool for windows that uses the M-Files API to list and delete objects from a M-File Vault.
+
+MFilesImporter written by martin kramer <martin.kramer@lostindetails.com>
+  -h, --help                 prints the help
+  -v, --vault=VALUE          use the specified vault
+  -u, --user=VALUE           use the specified user
+  -s, --server=VALUE         use the specified server
+  -p, --password=VALUE       use the specified password
+      --destroy-by-class=VALUE
+                             destroy objects of the following classes, use
+                               Comma ',' as a separator for multiple classes
+      --destroy-by-objecttype=VALUE
+                             destroy objects of the specified object types, use
+                               Comma ',' as a separator for multiple classes
+      --lc, --list-classes   list all classes and their object counts
+      --lo, --list-objecttypes
+                             list all object types and their object counts
+
+usage examples:
+
+MFilesDeleter -v "Sample Vault" -lo
+        Lists all object types and the number of files
+
+MFilesDeleter -v "Sample Vault" -lc
+        Lists all classes and the number of files
+
+MFilesDeleter -v "Sample Vault" --destroy-by-class "Request for Proposal"
+        Destroys all files that belong to the class 'Request for Proposal'
