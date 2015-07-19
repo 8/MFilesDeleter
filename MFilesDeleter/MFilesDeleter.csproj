@@ -53,7 +53,6 @@
     <Compile Include="Mono.Options\Options.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="README" />
     <Compile Include="Service\ClassesService.cs" />
     <Compile Include="Service\DestroyObjectService.cs" />
     <Compile Include="Service\FindObjectsService.cs" />
